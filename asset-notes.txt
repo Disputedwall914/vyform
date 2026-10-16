@@ -1,0 +1,13 @@
+Asset: hero-cursor.webp
+Generation: built-in image_gen tool; stylized-concept; genuine transparent alpha.
+Hero is an original generated 3D cursor sculpture, replacing the supplied face.
+The 20 valid MotionSites GIFs were converted to equivalent 630px/20fps H.264 loops.
+They play only near the viewport. Reduced-motion mode uses the embedded stills.
+The unavailable Celestia GIF is replaced by an original architectural exploration.
+The four about objects and nine project images came from the user-supplied reference.
+Project examples are labeled as design references, not client work.
+All graphics, videos, fonts, CSS and JS are embedded in the standalone HTML.
+Contact prepares a mailto draft for julianbuhler9@gmail.com; there is no backend.
+
+Final image-generation prompt:
+Use case: stylized-concept. Asset type: isolated transparent 3D hero sculpture for a creative freelance web designer portfolio, on almost black #0C0C0C. Primary request: one bold sculptural computer cursor arrow, a sophisticated tactile 3D art object, not a flat icon. Chunky inflated extruded cursor silhouette with beveled edges, diagonally pointing upper left, balanced upward composition. Materials: highly polished liquid chrome, iridescent violet and magenta on the sides, brushed silver front, subtle amber reflected edge light, believable ray-traced studio reflections. Accompanied by only three small floating rounded chrome pixel cubes close to the arrow's lower right edge. Composition: centered upright sculpture fills 85 percent of a square canvas, fully visible, camera slightly below eye level with perspective, generous but minimal transparent margins. High-end Octane / Cinema 4D product render, soft studio light and bright clean highlights, dark reflections for depth, crisp silhouette and smooth surfaces. Background must be genuinely transparent with alpha, no floor or baked shadow. No text, no logo, no human, no face, no head, no donut, no ring, no torus, no environment.

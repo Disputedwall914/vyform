@@ -1,0 +1,15 @@
+import { readFile, writeFile, readdir } from 'node:fs/promises';
+const dir = new URL('./dist/', import.meta.url);
+let html = await readFile(new URL('index.html', dir), 'utf8');
+const files = await readdir(new URL('assets/', dir));
+const js = await readFile(new URL('assets/' + files.find(f => f.endsWith('.js')), dir), 'utf8');
+const css = await readFile(new URL('assets/' + files.find(f => f.endsWith('.css')), dir), 'utf8');
+const notes = await readFile(new URL('./asset-notes.txt', import.meta.url), 'utf8');
+const fontLicense = await readFile(new URL('./assets/Kanit-OFL.txt', import.meta.url), 'utf8');
+const vendorLicenses = await readFile(new URL('./third-party-notices.txt', import.meta.url), 'utf8');
+html = html.replace('</head>', () => '<!--\n' + notes.replace(/--/g, '—') + '\nKanit font license:\n' + fontLicense.replace(/--/g, '—') + '\n' + vendorLicenses.replace(/--/g, '—') + '\n-->\n</head>');
+html = html.replace(/\s*<script[^>]*src="[^"]+"[^>]*><\/script>/, '');
+html = html.replace(/\s*<link[^>]*href="\.\/assets\/[^\"]+\.css"[^>]*>/, () => '\n  <style>' + css + '</style>');
+html = html.replace('</body>', () => '<script>' + js.replace(/<\/script/gi, '<\\/script') + '</script>\n</body>');
+await writeFile(new URL('index.html', dir), html);
+console.log('Standalone dist/index.html ready (' + Math.round(Buffer.byteLength(html) / 1024) + ' KB).');
